@@ -17,7 +17,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SequenceGenerator(name = "idGenerator", sequenceName = "PERSONS_SEQ", initialValue = 1, allocationSize = 1)
-public class Person extends BaseModel{
+public class Person extends BaseModel {
     @NotNull
     @Column(name = "first_name")
     private String firstName;
