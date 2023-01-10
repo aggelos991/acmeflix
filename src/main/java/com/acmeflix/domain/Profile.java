@@ -40,12 +40,4 @@ public class Profile extends BaseModel{
 
     @Column(name = "total_watch_time")
     private Integer totalWatchTime;
-
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "profile_id")
-    private Set<Movie> watchedMovies;
-
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "profile_id")
-    private Set<TvShow> watchedTvShows;
 }
