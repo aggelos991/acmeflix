@@ -20,6 +20,7 @@ import java.util.Set;
 public class ContentItem extends BaseModel {
     @NotNull
     private String title;
+
     private String description;
 
     @NotNull

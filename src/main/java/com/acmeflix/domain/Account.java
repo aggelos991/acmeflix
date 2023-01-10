@@ -23,19 +23,24 @@ public class Account extends BaseModel{
     @NotNull
     @Column(length = 50, nullable = false, unique = true)
     private String email;
+
     @NotNull
     @Column(name = "first_name", length = 20 , nullable = false)
     private String firstName;
+
     @NotNull
     @Column(name = "last_name", length = 30 , nullable = false)
     private String lastName;
+
     @NotNull
     @Enumerated(EnumType.STRING)
     private Country country;
+
     @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "subscription_tier")
     private SubscriptionTier subscriptionTier;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Profile> profiles;
 }
