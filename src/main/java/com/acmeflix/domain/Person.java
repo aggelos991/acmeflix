@@ -1,5 +1,6 @@
 package com.acmeflix.domain;
 
+import com.acmeflix.domain.enumeration.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -11,22 +12,21 @@ import lombok.experimental.SuperBuilder;
 @Data
 @EqualsAndHashCode(callSuper=true)
 @SuperBuilder
-@Table(name = "EPISODES")
+@Table(name = "PERSONS")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@SequenceGenerator(name = "idGenerator", sequenceName = "EPISODES_SEQ", initialValue = 1, allocationSize = 1)
-public class Episode extends BaseModel {
+@SequenceGenerator(name = "idGenerator", sequenceName = "PERSONS_SEQ", initialValue = 1, allocationSize = 1)
+public class Person extends BaseModel {
+    @NotNull
+    @Column(name = "first_name")
+    private String firstName;
 
     @NotNull
-    private String title;
+    @Column(name = "last_name")
+    private String lastName;
 
     @NotNull
-    private Integer duration;
-
-    @NotNull
-    private String description;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private Season season;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }

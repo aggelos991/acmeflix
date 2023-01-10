@@ -1,6 +1,6 @@
 package com.acmeflix.domain;
 
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,10 +13,12 @@ import java.io.Serializable;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BaseModel implements Serializable {
+@MappedSuperclass
+public abstract class BaseModel implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
-    @Id
-    private Long id;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idGenerator")
+    private Long id;
 }
