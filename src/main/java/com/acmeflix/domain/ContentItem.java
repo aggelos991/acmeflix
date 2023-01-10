@@ -2,12 +2,12 @@ package com.acmeflix.domain;
 
 import com.acmeflix.domain.enumeration.Genre;
 import com.acmeflix.domain.enumeration.MaturityRating;
-import com.acmeflix.domain.enumeration.Rating;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Data
@@ -32,8 +32,7 @@ public abstract class ContentItem extends BaseModel {
     private Integer releaseYear;
 
     @NotNull
-    @Enumerated(EnumType.STRING)
-    private Rating rating;
+    private BigDecimal rating;
 
     @Column(name = "number_Of_views")
     private Integer numberOfViews;
