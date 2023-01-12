@@ -40,4 +40,9 @@ public class Profile extends BaseModel{
 
     @Column(name = "total_watch_time")
     private Integer totalWatchTime;
+
+    @ManyToMany
+    @JoinTable(name = "profile_content_items",joinColumns = {@JoinColumn(name = "profile_id")}
+            ,inverseJoinColumns = {@JoinColumn(name = "content_item_id")})
+    private Set<ContentItem> watchedContent;
 }

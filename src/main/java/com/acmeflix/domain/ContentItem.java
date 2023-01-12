@@ -53,9 +53,4 @@ public abstract class ContentItem extends BaseModel {
     @JoinTable(name = "content_item_persons",joinColumns = {@JoinColumn(name = "content_item_id")}
     ,inverseJoinColumns = {@JoinColumn(name = "person_id")})
     private Set<Person> persons;
-
-    @ManyToMany
-    @JoinTable(name = "content_item_profiles",joinColumns = {@JoinColumn(name = "content_item_id")}
-            ,inverseJoinColumns = {@JoinColumn(name = "profile_id")})
-    private Set<Profile> profiles;
 }

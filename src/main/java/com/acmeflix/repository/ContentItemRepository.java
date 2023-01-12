@@ -12,7 +12,12 @@ public interface ContentItemRepository extends JpaRepository<ContentItem,Long> {
     ContentItem findByTitle(String title);
 
     Set<ContentItem> findTop10ByOrderByRatingDesc();
+
     Set<ContentItem> findTop10ByOrderByNumberOfViewsDesc();
+
+/*
+    Set<Genre> countByGenres();
+*/
 
 
 }
