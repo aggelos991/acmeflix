@@ -37,6 +37,9 @@ public abstract class ContentItem extends BaseModel {
     @Column(name = "number_Of_views")
     private Integer numberOfViews;
 
+    @Transient
+    private Boolean isMovie;
+
     @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "maturity_rating")

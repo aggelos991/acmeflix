@@ -21,7 +21,7 @@ import java.util.Set;
 public class Season extends BaseModel{
 
     @NotNull
-    private String name;
+    private String title;
 
     @NotNull
     private String description;
