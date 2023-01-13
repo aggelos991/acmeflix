@@ -41,6 +41,7 @@ public class Account extends BaseModel{
     @Column(name = "subscription_tier")
     private SubscriptionTier subscriptionTier;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "account_id")
     private Set<Profile> profiles;
 }

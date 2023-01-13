@@ -1,6 +1,5 @@
 package com.acmeflix.domain;
 
-import com.acmeflix.domain.enumeration.Genre;
 import com.acmeflix.domain.enumeration.MaturityRating;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -43,16 +42,11 @@ public abstract class ContentItem extends BaseModel {
     private MaturityRating maturityRating;
 
     @NotNull
-    @Enumerated(EnumType.STRING)
-    private Set<Genre> genres;
+    @ManyToOne
+    private Category category;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "content_item_persons",joinColumns = {@JoinColumn(name = "content_item_id")}
     ,inverseJoinColumns = {@JoinColumn(name = "person_id")})
     private Set<Person> persons;
-
-    @ManyToMany
-    @JoinTable(name = "content_item_profiles",joinColumns = {@JoinColumn(name = "content_item_id")}
-            ,inverseJoinColumns = {@JoinColumn(name = "profile_id")})
-    private Set<Profile> profiles;
 }
