@@ -1,6 +1,5 @@
 package com.acmeflix.service;
 
-import com.acmeflix.domain.Account;
 import com.acmeflix.domain.ContentItem;
 import com.acmeflix.domain.Profile;
 import com.acmeflix.repository.ProfileRepository;
@@ -8,9 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 @Service

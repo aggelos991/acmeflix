@@ -1,11 +1,12 @@
 package com.acmeflix.repository;
 
 import com.acmeflix.domain.ContentItem;
-import com.acmeflix.domain.enumeration.Genre;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
 import java.util.Set;
+
+@Repository
 
 public interface ContentItemRepository extends JpaRepository<ContentItem,Long> {
 
@@ -14,10 +15,4 @@ public interface ContentItemRepository extends JpaRepository<ContentItem,Long> {
     Set<ContentItem> findTop10ByOrderByRatingDesc();
 
     Set<ContentItem> findTop10ByOrderByNumberOfViewsDesc();
-
-/*
-    Set<Genre> countByGenres();
-*/
-
-
 }
