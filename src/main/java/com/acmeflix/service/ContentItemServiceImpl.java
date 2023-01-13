@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
-public class ContentItemServiceImpl extends BaseServiceImpl<ContentItem> implements ContentItemService{
+public class ContentItemServiceImpl extends BaseServiceImpl<ContentItem> implements ContentItemService {
 
     private final ContentItemRepository contentItemRepository;
 
@@ -36,4 +36,6 @@ public class ContentItemServiceImpl extends BaseServiceImpl<ContentItem> impleme
     public Set<ContentItem> searchTop10ByRating(){
         return contentItemRepository.findTop10ByOrderByRatingDesc();
     }
+
+
 }

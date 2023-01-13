@@ -24,9 +24,9 @@ public class ProfileServiceImpl extends BaseServiceImpl<Profile> implements Prof
         return profile.getTotalWatchTime();
     }
 
-    public Set<ContentItem> searchProfileViewingHistory(Profile profile){
+    /*public Set<ContentItem> searchProfileViewingHistory(Profile profile){
         return profile.getWatchedContent();
-    }
+    }*/
 
 }
 

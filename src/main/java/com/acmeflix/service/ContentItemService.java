@@ -4,7 +4,7 @@ import com.acmeflix.domain.ContentItem;
 
 import java.util.Set;
 
-public interface ContentItemService extends BaseService<ContentItem,Long> {
+public interface ContentItemService extends BaseService<ContentItem,Long>{
 
     ContentItem searchByTitle(String title);
 

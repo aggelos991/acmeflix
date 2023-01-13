@@ -7,8 +7,8 @@ import java.util.Set;
 
 public interface ProfileService extends BaseService<Profile,Long> {
 
-    Integer searchProfileNumberOfViews(Profile profile);
+    //Integer searchProfileNumberOfViews(Profile profile);
 
-    Set<ContentItem> searchProfileViewingHistory(Profile profile);
+    //Set<ContentItem> searchProfileViewingHistory(Profile profile);
 
 }
