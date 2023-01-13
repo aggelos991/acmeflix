@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.Set;
@@ -22,10 +23,27 @@ public class ContentItemServiceImpl extends BaseServiceImpl<ContentItem> impleme
     }
 
     @Override
-    public ContentItem searchByTitle(final String title){
-        return Optional.ofNullable(contentItemRepository.findByTitle(title)).orElseThrow(
+        public List<ContentItem> searchByTitle(final String title){
+        return Optional.ofNullable(contentItemRepository.findByTitleContainsIgnoreCase(title)).orElseThrow(
                 NoSuchElementException::new);
     }
+
+    @Override
+    public Set<ContentItem> searchByReleaseYear(Integer year){
+        return contentItemRepository.findAllByReleaseYear(year);
+    }
+
+    @Override
+    public Set<ContentItem> searchByPersonsName(String firstName, String lastName){
+        return contentItemRepository.findAllByPersonsFirstNameContainsIgnoreCaseAndPersonsLastNameContainsIgnoreCase(firstName, lastName);
+
+    }
+
+    @Override
+    public Set<ContentItem> searchByCategory(String categoryName){
+        return contentItemRepository.findAllByCategoryNameIgnoreCase(categoryName);
+    }
+
 
     @Override
     public Set<ContentItem> searchTop10ByNumberOfViews(){

@@ -1,13 +1,10 @@
 package com.acmeflix.service;
 
-import com.acmeflix.domain.ContentItem;
 import com.acmeflix.domain.Profile;
 import com.acmeflix.repository.ProfileRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
