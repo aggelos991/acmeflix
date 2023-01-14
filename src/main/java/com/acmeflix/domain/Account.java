@@ -3,6 +3,7 @@ package com.acmeflix.domain;
 import com.acmeflix.domain.enumeration.Country;
 import com.acmeflix.domain.enumeration.SubscriptionTier;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -22,6 +23,7 @@ public class Account extends BaseModel{
 
     @NotNull
     @Column(length = 50, nullable = false, unique = true)
+    @Email
     private String email;
 
     @NotNull
