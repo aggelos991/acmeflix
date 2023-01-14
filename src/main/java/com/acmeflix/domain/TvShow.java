@@ -1,5 +1,6 @@
 package com.acmeflix.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,5 +21,6 @@ import java.util.Set;
 public class TvShow extends ContentItem{
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "tvShow", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<Season> seasons;
 }

@@ -2,6 +2,7 @@ package com.acmeflix.domain;
 
 import com.acmeflix.domain.enumeration.Language;
 import com.acmeflix.domain.enumeration.ProfileType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -30,6 +31,10 @@ public class Profile extends BaseModel{
     @Enumerated(EnumType.STRING)
     private Language language;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Account account;
+
     @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "profile_type")
@@ -38,8 +43,9 @@ public class Profile extends BaseModel{
     @Column(name = "total_watch_time")
     private Integer totalWatchTime;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "profile_content_items",joinColumns = {@JoinColumn(name = "profile_id")}
             ,inverseJoinColumns = {@JoinColumn(name = "content_item_id")})
+    @JsonIgnore
     private Set<ContentItem> watchedContent;
 }
