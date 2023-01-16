@@ -1,6 +1,5 @@
 package com.acmeflix.controller;
 
-import com.acmeflix.domain.Account;
 import com.acmeflix.domain.ContentItem;
 import com.acmeflix.service.ContentItemService;
 import jakarta.validation.Valid;
@@ -41,10 +40,12 @@ public class ContentItemController {
     public Set<ContentItem> findByCategory(@PathVariable String name){
         return contentItemService.searchByCategory(name);
     }
+
     @GetMapping("/top10/views")
     public List<ContentItem> findTop10ByViews(){
         return contentItemService.searchTop10ByNumberOfViews();
     }
+
     @GetMapping("/top10/rating")
     public List<ContentItem> findTop10ByRating(){
         return contentItemService.searchTop10ByRating();
