@@ -16,8 +16,8 @@ public interface ContentItemService extends BaseService<ContentItem,Long>{
     Set<ContentItem> searchByPersonsName(String firstName, String lastName);
 
 
-    Set<ContentItem> searchTop10ByNumberOfViews();
+    List<ContentItem> searchTop10ByNumberOfViews();
 
-    Set<ContentItem> searchTop10ByRating();
+    List<ContentItem> searchTop10ByRating();
 
 }

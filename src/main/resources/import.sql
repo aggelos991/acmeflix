@@ -31,8 +31,9 @@ INSERT INTO PROFILES(ID, LANGUAGE, NAME, PROFILE_TYPE, TOTAL_WATCH_TIME, ACCOUNT
 INSERT INTO PROFILES(ID, LANGUAGE, NAME, PROFILE_TYPE, TOTAL_WATCH_TIME, ACCOUNT_ID) VALUES (3003,'DEUTSCH','lil_thomas','KID',1500,2002);
 INSERT INTO PROFILES(ID, LANGUAGE, NAME, PROFILE_TYPE, TOTAL_WATCH_TIME, ACCOUNT_ID) VALUES (3004,'FRANÇAIS','mbappe98','REGULAR',500,2003);
 
-INSERT INTO MOVIES(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR, DURATION, HAS_SEQUEL) VALUES ( 4001,'The Godfather', 'The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.',7001,'R_13',100,10,1972,175,true);
-INSERT INTO MOVIES(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR, DURATION, HAS_SEQUEL) VALUES ( 4002,'The Dark Knight','When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.',7002,'R_13',600000,96,2008,130,false);
+
+INSERT INTO MOVIES(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR, DURATION, HAS_SEQUEL) VALUES ( 4001,'The Godfather', 'The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.',7001,'R_13',100000000000000,10,1972,175,true);
+INSERT INTO MOVIES(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR, DURATION, HAS_SEQUEL) VALUES ( 4002,'The Dark Knight','When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.',7002,'R_13',600,96,2008,130,false);
 
 INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4010,'Breaking Bad','A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine with a former student in order to secure his family''s future.',7002,'R_16',1000,93,2008 );
 INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4011,'Chernobyl','In April 1986, an explosion at the Chernobyl nuclear power plant in the Union of Soviet Socialist Republics becomes one of the world''s worst man-made catastrophes.',7008,'R_16',100,80,2019 );
@@ -68,6 +69,8 @@ INSERT INTO PROFILE_CONTENT_ITEMS(PROFILE_ID, CONTENT_ITEM_ID) VALUES (3002,4001
 INSERT INTO PROFILE_CONTENT_ITEMS(PROFILE_ID, CONTENT_ITEM_ID) VALUES (3003,4001  );
 INSERT INTO PROFILE_CONTENT_ITEMS(PROFILE_ID, CONTENT_ITEM_ID) VALUES (3003,4002  );
 INSERT INTO PROFILE_CONTENT_ITEMS(PROFILE_ID, CONTENT_ITEM_ID) VALUES (3004,4001  );
+INSERT INTO PROFILE_CONTENT_ITEMS(PROFILE_ID, CONTENT_ITEM_ID) VALUES (3003,4010  );
+INSERT INTO PROFILE_CONTENT_ITEMS(PROFILE_ID, CONTENT_ITEM_ID) VALUES (3003,4011  );
 
 
 SELECT * FROM PROFILES

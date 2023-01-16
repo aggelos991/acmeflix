@@ -16,8 +16,8 @@ public interface ContentItemRepository extends JpaRepository<ContentItem,Long> {
 
     Set<ContentItem> findAllByCategoryNameIgnoreCase(String categoryName);
 
-    Set<ContentItem> findTop10ByOrderByRatingDesc();
+    List<ContentItem> findTop10ByOrderByRatingDesc();
 
-    Set<ContentItem> findTop10ByOrderByNumberOfViewsDesc();
+    List<ContentItem> findTop10ByOrderByNumberOfViewsDesc();
 
 }

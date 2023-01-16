@@ -46,12 +46,12 @@ public class ContentItemServiceImpl extends BaseServiceImpl<ContentItem> impleme
 
 
     @Override
-    public Set<ContentItem> searchTop10ByNumberOfViews(){
+    public List<ContentItem> searchTop10ByNumberOfViews(){
         return contentItemRepository.findTop10ByOrderByNumberOfViewsDesc();
     }
 
     @Override
-    public Set<ContentItem> searchTop10ByRating(){
+    public List<ContentItem> searchTop10ByRating(){
         return contentItemRepository.findTop10ByOrderByRatingDesc();
     }
 
