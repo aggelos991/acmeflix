@@ -113,7 +113,7 @@ public enum Country {
     MALAYSIA,
     MALDIVES,
     MALI,
-    MALTAMalta,
+    MALTA,
     MARSHALL_ISLANDS,
     MAURITANIA,
     MAURITIUS,

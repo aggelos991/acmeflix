@@ -21,5 +21,4 @@ public abstract class BaseModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idGenerator")
     private Long id;
-
 }
