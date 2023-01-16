@@ -9,6 +9,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -44,7 +45,9 @@ public class Account extends BaseModel{
     @Column(name = "subscription_tier")
     private SubscriptionTier subscriptionTier;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "account",cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
-    private Set<Profile> profiles;
+    private final Set<Profile> profiles = new HashSet<>();
 }

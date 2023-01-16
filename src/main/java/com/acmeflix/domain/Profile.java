@@ -31,7 +31,8 @@ public class Profile extends BaseModel{
     @Enumerated(EnumType.STRING)
     private Language language;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @NotNull
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JsonIgnore
     private Account account;
 
@@ -43,7 +44,7 @@ public class Profile extends BaseModel{
     @Column(name = "total_watch_time")
     private Integer totalWatchTime;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "profile_content_items",joinColumns = {@JoinColumn(name = "profile_id")}
             ,inverseJoinColumns = {@JoinColumn(name = "content_item_id")})
     @JsonIgnore

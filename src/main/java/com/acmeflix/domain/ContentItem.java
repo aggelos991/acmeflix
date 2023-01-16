@@ -44,7 +44,6 @@ public abstract class ContentItem extends BaseModel {
 
     @NotNull
     @ManyToOne
-    @JsonIgnore
     private Category category;
 
     @ManyToMany(fetch = FetchType.LAZY)

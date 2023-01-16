@@ -1,8 +1,12 @@
 package com.acmeflix.controller;
 
+import com.acmeflix.domain.Account;
 import com.acmeflix.domain.ContentItem;
 import com.acmeflix.service.ContentItemService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,6 +40,23 @@ public class ContentItemController {
     @GetMapping("/searchByCategory/{name}")
     public Set<ContentItem> findByCategory(@PathVariable String name){
         return contentItemService.searchByCategory(name);
+    }
+
+    @PostMapping
+    public ResponseEntity<ContentItem> create(@Valid @RequestBody ContentItem contentItem){
+        return new ResponseEntity<>(contentItemService.create(contentItem), HttpStatus.CREATED);
+    }
+
+    @PutMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void update(@Valid @RequestBody ContentItem contentItem){
+        contentItemService.update(contentItem);
+    }
+
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteById(@PathVariable Long id){
+        contentItemService.deleteById(id);
     }
 
 }
