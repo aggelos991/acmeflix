@@ -56,6 +56,7 @@ public enum Country {
     ECUADOR,
     EGYPT,
     EL_SALVADOR,
+    ENGLAND,
     EQUATORIAL_GUINEA,
     ERITREA,
     ESTONIA,
