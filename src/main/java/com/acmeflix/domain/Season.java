@@ -1,5 +1,6 @@
 package com.acmeflix.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -27,8 +28,10 @@ public class Season extends BaseModel{
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JsonIgnore
     private TvShow tvShow;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "season", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<Episode> episodes;
 }

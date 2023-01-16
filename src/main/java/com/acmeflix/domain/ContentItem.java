@@ -1,6 +1,7 @@
 package com.acmeflix.domain;
 
 import com.acmeflix.domain.enumeration.MaturityRating;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -45,8 +46,9 @@ public abstract class ContentItem extends BaseModel {
     @ManyToOne
     private Category category;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "content_item_persons",joinColumns = {@JoinColumn(name = "content_item_id")}
     ,inverseJoinColumns = {@JoinColumn(name = "person_id")})
+    @JsonIgnore
     private Set<Person> persons;
 }

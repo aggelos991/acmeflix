@@ -2,11 +2,14 @@ package com.acmeflix.domain;
 
 import com.acmeflix.domain.enumeration.Country;
 import com.acmeflix.domain.enumeration.SubscriptionTier;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -22,6 +25,7 @@ public class Account extends BaseModel{
 
     @NotNull
     @Column(length = 50, nullable = false, unique = true)
+    @Email
     private String email;
 
     @NotNull
@@ -41,7 +45,9 @@ public class Account extends BaseModel{
     @Column(name = "subscription_tier")
     private SubscriptionTier subscriptionTier;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "account_id")
-    private Set<Profile> profiles;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private final Set<Profile> profiles = new HashSet<>();
 }

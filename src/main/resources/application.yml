@@ -33,7 +33,7 @@ spring:
   jpa:
     generate-ddl: true
     hibernate:
-      ddl-auto: create-drop #If an import.sql exists in resources, it will be also executed
+      ddl-auto: create #If an import.sql exists in resources, it will be also executed
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     open-in-view: false
