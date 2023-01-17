@@ -1,7 +1,7 @@
 package com.acmeflix.config;
 
 import com.acmeflix.repository.AccountRepository;
-import com.acmeflix.repository.ContentItemRepository;
+import com.acmeflix.repository.MovieRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +19,14 @@ public class BackgroundTasksConfig {
 	private static final Logger LOG = LoggerFactory.getLogger(BackgroundTasksConfig.class);
 
 	@Autowired
-	ContentItemRepository contentItemRepository;
+	MovieRepository movieRepository;
 
 	@Autowired
 	AccountRepository accountRepository;
 
 	@Scheduled(initialDelay = 20, fixedRate = 20, timeUnit = TimeUnit.SECONDS)
-	public void logNumberOfContentItems() {
-		LOG.info("Total content items at ({}): {}", LocalDateTime.now(), contentItemRepository.count());
+	public void logNumberOfMovies() {
+		LOG.info("Total movies at ({}): {}", LocalDateTime.now(), movieRepository.count());
 	}
 
 	@Scheduled(cron = "0/30 * * ? * * ")

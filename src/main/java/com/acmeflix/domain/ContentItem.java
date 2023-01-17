@@ -46,9 +46,8 @@ public abstract class ContentItem extends BaseModel {
     @ManyToOne
     private Category category;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "content_item_persons",joinColumns = {@JoinColumn(name = "content_item_id")}
     ,inverseJoinColumns = {@JoinColumn(name = "person_id")})
-    @JsonIgnore
     private Set<Person> persons;
 }
