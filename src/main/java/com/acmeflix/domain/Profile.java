@@ -5,12 +5,10 @@ import com.acmeflix.domain.enumeration.ProfileType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -33,7 +31,6 @@ public class Profile extends BaseModel{
 
     @NotNull
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JsonIgnore
     private Account account;
 
     @NotNull
@@ -44,9 +41,8 @@ public class Profile extends BaseModel{
     @Column(name = "total_watch_time")
     private Integer totalWatchTime;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "profile_content_items",joinColumns = {@JoinColumn(name = "profile_id")}
             ,inverseJoinColumns = {@JoinColumn(name = "content_item_id")})
-    @JsonIgnore
-    private Set<ContentItem> watchedContent;
+    private final Set<ContentItem> watchedContent = new HashSet<>();
 }

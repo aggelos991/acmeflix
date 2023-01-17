@@ -28,7 +28,7 @@ public class Episode extends BaseModel {
     @NotNull
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JsonIgnore
     private Season season;
 }
