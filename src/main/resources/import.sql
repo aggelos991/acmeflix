@@ -64,6 +64,7 @@ INSERT INTO CATEGORIES(ID, NAME) VALUES ( 7009,'BIOGRAPHY');
 INSERT INTO CATEGORIES(ID, NAME) VALUES ( 7010,'ACTION');
 INSERT INTO CATEGORIES(ID, NAME) VALUES ( 7011,'WAR');
 INSERT INTO CATEGORIES(ID, NAME) VALUES ( 7012,'HISTORY');
+INSERT INTO CATEGORIES(ID, NAME) VALUES ( 7013,'DOCUMENTARY');
 
 
 INSERT INTO ACCOUNTS(ID, COUNTRY, EMAIL, FIRST_NAME, LAST_NAME, SUBSCRIPTION_TIER) VALUES (2001,'GREECE','email1@gmail.com','AGGELOS','TSELES','BASIC');
@@ -139,6 +140,17 @@ INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER
 INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4011,'Chernobyl','In April 1986, an explosion at the Chernobyl nuclear power plant in the Union of Soviet Socialist Republics becomes one of the world''s worst man-made catastrophes.',7001,'R_16',100,80,2019 );
 INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4012, 'Modern Family','Three different but related families face trials and tribulations in their own uniquely comedic ways.', 7006,'R_7',780,95,2009);
 INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4013, 'Game of Thrones','Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia',7005,'R_16',3200,97,2011);
+INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4020,'Planet Earth','A documentary series on the wildlife found on Earth. Each episode covers a different habitat: deserts, mountains, deep oceans, shallow seas, forests, caves, polar regions, fresh water, plains and jungles.',7013,'R_7',1500000,93,2006);
+INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4021,'The Wire','The Baltimore drug scene, as seen through the eyes of drug dealers and law enforcement.',7001,'R_16',4645367,91,2002);
+INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4022,'Band of Brothers','The story of Easy Company of the U.S. Army 101st Airborne Division and their mission in World War II Europe, from Operation Overlord to V-J Day.',7011,'R_16',94749,98,2001);
+INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4023,'The Sopranos','New Jersey mob boss Tony Soprano deals with personal and professional issues in his home and business life that affect his mental state, leading him to seek professional psychiatric counseling.',7002,'R_16',98768,85,1999);
+INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4024,'Sherlock','A modern update finds the famous sleuth and his doctor partner solving crime in 21st-century London.',7002,'R_13','35373',73,2010);
+INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4025,'The Office','A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, and tedium.',7007,'R_7',87653,65,2005);
+INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4026, 'Better Call Saul','The trials and tribulations of criminal lawyer Jimmy McGill in the years leading up to his fateful run-in with Walter White and Jesse Pinkman.',7001,'R_16',677389,92,2015);
+INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4027, 'It''s Always Sunny in Philadelphia','Five friends with big egos and small brains are the proprietors of an Irish pub in Philadelphia.',7007,'R_7',43536,55,2005);
+INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4028,'Narcos','A chronicled look at the criminal exploits of Colombian drug lord Pablo Escobar, as well as the many other drug kingpins who plagued the country through the years.',7009,'R_16',33746384,75,2015);
+INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4029,'One Piece','Follows the adventures of Monkey D. Luffy and his pirate crew in order to find the greatest treasure ever left by the legendary Pirate, Gold Roger. The famous mystery treasure named "One Piece".',7006,'R_7',16353,90,1999);
+INSERT INTO TV_SHOWS(ID,TITLE, DESCRIPTION, CATEGORY_ID, MATURITY_RATING, NUMBER_OF_VIEWS, RATING, RELEASE_YEAR)  VALUES ( 4030,'The Simpsons','The satiric adventures of a working-class family in the misfit city of Springfield.',7006,'R_7',97638,72,1989);
 
 
 INSERT INTO SEASONS(ID, DESCRIPTION, NAME, TVSHOW_ID) VALUES ( 5001,'Season 1 of Breaking Bad','SEASON 1',4010 );
@@ -250,8 +262,6 @@ INSERT INTO CONTENT_ITEM_PERSONS(CONTENT_ITEM_ID, PERSON_ID) VALUES (4019,1051);
 INSERT INTO CONTENT_ITEM_PERSONS(CONTENT_ITEM_ID, PERSON_ID) VALUES (4019,1052);
 INSERT INTO CONTENT_ITEM_PERSONS(CONTENT_ITEM_ID, PERSON_ID) VALUES (4010,1007);
 INSERT INTO CONTENT_ITEM_PERSONS(CONTENT_ITEM_ID, PERSON_ID) VALUES (4010,1008);
-INSERT INTO CONTENT_ITEM_PERSONS(CONTENT_ITEM_ID, PERSON_ID) VALUES (4011,1005);
-INSERT INTO CONTENT_ITEM_PERSONS(CONTENT_ITEM_ID, PERSON_ID) VALUES (4011,1006);
 
 
 INSERT INTO PROFILE_CONTENT_ITEMS(CONTENT_ITEM_ID, PROFILE_ID) VALUES ( 4001,3001 );
