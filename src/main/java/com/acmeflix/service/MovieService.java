@@ -1,6 +1,7 @@
 package com.acmeflix.service;
 
 import com.acmeflix.domain.Movie;
+import com.acmeflix.domain.Person;
 
 import java.util.List;
 import java.util.Set;
@@ -18,5 +19,4 @@ public interface MovieService extends BaseService<Movie,Long>{
     List<Movie> searchTop10ByNumberOfViews();
 
     List<Movie> searchTop10ByRating();
-
 }

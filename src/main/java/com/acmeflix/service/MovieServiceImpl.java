@@ -1,6 +1,7 @@
 package com.acmeflix.service;
 
 import com.acmeflix.domain.Movie;
+import com.acmeflix.domain.Person;
 import com.acmeflix.repository.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -54,5 +55,4 @@ public class MovieServiceImpl extends BaseServiceImpl<Movie> implements MovieSer
     public List<Movie> searchTop10ByRating(){
         return movieRepository.findTop10ByOrderByRatingDesc();
     }
-
 }

@@ -1,6 +1,7 @@
 package com.acmeflix.repository;
 
 import com.acmeflix.domain.Movie;
+import com.acmeflix.domain.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
