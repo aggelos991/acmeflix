@@ -1,6 +1,7 @@
 package com.acmeflix.controller;
 
 import com.acmeflix.domain.Account;
+import com.acmeflix.domain.Profile;
 import com.acmeflix.service.AccountService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -41,7 +41,7 @@ public class AccountController {
     }
 
     @GetMapping("{id}/searchViewingHours")
-    public ResponseEntity<Map<String,Integer>> findViewingHours(@PathVariable Long id){
+    public ResponseEntity<List<Object[]>> findViewingHours(@PathVariable Long id){
         return ResponseEntity.ok(accountService.searchViewingHoursPerProfileByAccountID(id));
     }
 

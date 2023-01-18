@@ -55,7 +55,7 @@ public class MovieServiceImpl extends BaseServiceImpl<Movie> implements MovieSer
     }
 
     @Override
-    public List<Category>  searchTop5PopularCategories(){
+    public List<Object[]>  searchTop5PopularCategories(){
         return movieRepository.findTop5PopularCategories();
     }
 }

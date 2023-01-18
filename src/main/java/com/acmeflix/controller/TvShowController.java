@@ -72,7 +72,7 @@ public class TvShowController {
     }
 
     @GetMapping("/findtop5categories")
-    public List<Category>  searchTop5Categories(){
+    public List<Object[]>  searchTop5Categories(){
         return tvShowService.searchTop5PopularCategories();
     }
 }

@@ -22,6 +22,6 @@ public interface TvShowRepository extends JpaRepository<TvShow,Long> {
 
     List<TvShow> findTop10ByOrderByNumberOfViewsDesc();
 
-    @Query(value = "select C.NAME from TV_SHOWS inner join CATEGORIES C on C.ID = TV_SHOWS.CATEGORY_ID group by C.NAME order by count(CATEGORY_ID) desc limit 5", nativeQuery = true)
-    List<Category> findTop5PopularCategories();
+    @Query(value = "select C.NAME,COUNT(C.ID) from TV_SHOWS inner join CATEGORIES C on C.ID = TV_SHOWS.CATEGORY_ID group by C.NAME order by count(CATEGORY_ID) desc limit 5", nativeQuery = true)
+    List<Object[]> findTop5PopularCategories();
 }

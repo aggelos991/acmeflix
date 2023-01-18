@@ -20,6 +20,6 @@ public interface TvShowService extends BaseService<TvShow,Long>{
 
     List<TvShow> searchTop10ByRating();
 
-    List<Category> searchTop5PopularCategories();
+    List<Object[]> searchTop5PopularCategories();
 
 }

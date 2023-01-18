@@ -24,6 +24,6 @@ public interface MovieRepository extends JpaRepository<Movie,Long> {
 
     List<Movie> findTop10ByOrderByNumberOfViewsDesc();
 
-    @Query(value = "select C.NAME from MOVIES inner join CATEGORIES C on C.ID = MOVIES.CATEGORY_ID group by C.NAME order by count(CATEGORY_ID) desc limit 5", nativeQuery = true)
-    List<Category> findTop5PopularCategories();
+    @Query(value = "select C.NAME,COUNT(C.ID) from MOVIES inner join CATEGORIES C on C.ID = MOVIES.CATEGORY_ID group by C.NAME order by count(CATEGORY_ID) desc limit 5", nativeQuery = true)
+    List<Object[]> findTop5PopularCategories();
 }

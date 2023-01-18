@@ -72,7 +72,7 @@ public class MovieController {
     }
 
     @GetMapping("/findtop5categories")
-    public List<Category>  searchTop5Categories(){
+    public List<Object[]>  searchTop5Categories(){
         return movieService.searchTop5PopularCategories();
     }
 }

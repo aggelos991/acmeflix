@@ -57,7 +57,7 @@ public class TvShowServiceImpl extends BaseServiceImpl<TvShow> implements TvShow
     }
 
     @Override
-    public List<Category> searchTop5PopularCategories(){
+    public List<Object[]> searchTop5PopularCategories(){
         return tvShowRepository.findTop5PopularCategories();
     }
 }
