@@ -44,6 +44,15 @@ public class AccountController {
         return ResponseEntity.ok(accountService.searchViewingHoursPerProfileByAccountID(id));
     }
 
+    @GetMapping("{id}/searchWatchedMovies")
+    public ResponseEntity<List<Object[]>> findWatchedMovies(@PathVariable Long id){
+        return ResponseEntity.ok(accountService.searchMoviesWatchedPerProfileByAccountId(id));
+    }
+
+    @GetMapping("{id}/searchWatchedTvShows")
+    public ResponseEntity<List<Object[]>> findWatchedTvShows(@PathVariable Long id){
+        return ResponseEntity.ok(accountService.searchTvShowsWatchedPerProfileByAccountId(id));
+    }
 
 
 }

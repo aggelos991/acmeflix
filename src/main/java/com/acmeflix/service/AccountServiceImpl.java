@@ -21,7 +21,16 @@ public class AccountServiceImpl extends BaseServiceImpl<Account> implements Acco
 
     @Override
     public List<Object[]> searchViewingHoursPerProfileByAccountID(Long id){
-        return  accountRepository.findViewingHoursPerProfileByAccountID(id);
+        return accountRepository.findViewingHoursPerProfileByAccountID(id);
+    }
+    @Override
+    public List<Object[]> searchMoviesWatchedPerProfileByAccountId(Long id){
+        return accountRepository.findMoviesWatchedPerProfileByAccountId(id);
+
+    }
+    @Override
+    public List<Object[]> searchTvShowsWatchedPerProfileByAccountId(Long id){
+        return accountRepository.findTvShowsWatchedPerProfileByAccountId(id);
     }
 
 }
