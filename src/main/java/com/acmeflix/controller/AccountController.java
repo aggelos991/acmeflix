@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -38,5 +39,12 @@ public class AccountController {
     public void deleteById(@PathVariable Long id){
         accountService.deleteById(id);
     }
+
+    @GetMapping("{id}/searchViewingHours")
+    public ResponseEntity<Map<String,Integer>> findViewingHours(@PathVariable Long id){
+        return ResponseEntity.ok(accountService.searchViewingHoursPerProfileByAccountID(id));
+    }
+
+
 
 }

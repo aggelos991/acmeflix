@@ -1,5 +1,6 @@
 package com.acmeflix.controller;
 
+import com.acmeflix.domain.Category;
 import com.acmeflix.domain.Movie;
 import com.acmeflix.domain.TvShow;
 import com.acmeflix.service.MovieService;
@@ -68,5 +69,10 @@ public class TvShowController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteById(@PathVariable Long id){
         tvShowService.deleteById(id);
+    }
+
+    @GetMapping("/findtop5categories")
+    public List<Category>  searchTop5Categories(){
+        return tvShowService.searchTop5PopularCategories();
     }
 }

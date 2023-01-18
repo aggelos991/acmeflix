@@ -1,5 +1,6 @@
 package com.acmeflix.service;
 
+import com.acmeflix.domain.Category;
 import com.acmeflix.domain.TvShow;
 import com.acmeflix.repository.TvShowRepository;
 import lombok.RequiredArgsConstructor;
@@ -55,5 +56,8 @@ public class TvShowServiceImpl extends BaseServiceImpl<TvShow> implements TvShow
         return tvShowRepository.findTop10ByOrderByRatingDesc();
     }
 
-
+    @Override
+    public List<Category> searchTop5PopularCategories(){
+        return tvShowRepository.findTop5PopularCategories();
+    }
 }

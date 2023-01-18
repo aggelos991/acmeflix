@@ -1,5 +1,6 @@
 package com.acmeflix.service;
 
+import com.acmeflix.domain.Category;
 import com.acmeflix.domain.TvShow;
 
 import java.util.List;
@@ -18,4 +19,7 @@ public interface TvShowService extends BaseService<TvShow,Long>{
     List<TvShow> searchTop10ByNumberOfViews();
 
     List<TvShow> searchTop10ByRating();
+
+    List<Category> searchTop5PopularCategories();
+
 }
