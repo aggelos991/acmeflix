@@ -16,15 +16,6 @@ public class ProfileServiceImpl extends BaseServiceImpl<Profile> implements Prof
     JpaRepository<Profile, Long> getRepository() {
         return profileRepository;
     }
-
-    public Integer searchProfileNumberOfViews(Profile profile){
-        return profile.getTotalWatchTime();
-    }
-
-    /*public Set<ContentItem> searchProfileViewingHistory(Profile profile){
-        return profile.getWatchedContent();
-    }*/
-
 }
 
 

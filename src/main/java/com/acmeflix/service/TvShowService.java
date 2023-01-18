@@ -1,6 +1,5 @@
 package com.acmeflix.service;
 
-import com.acmeflix.domain.Category;
 import com.acmeflix.domain.TvShow;
 
 import java.util.List;

@@ -1,7 +1,6 @@
 package com.acmeflix.controller;
 
 import com.acmeflix.domain.Account;
-import com.acmeflix.domain.Profile;
 import com.acmeflix.service.AccountService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

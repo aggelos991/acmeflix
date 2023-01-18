@@ -1,9 +1,6 @@
 package com.acmeflix.controller;
 
-import com.acmeflix.domain.Category;
-import com.acmeflix.domain.Movie;
 import com.acmeflix.domain.TvShow;
-import com.acmeflix.service.MovieService;
 import com.acmeflix.service.TvShowService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

@@ -1,10 +1,8 @@
 package com.acmeflix.service;
 
-import com.acmeflix.domain.Category;
 import com.acmeflix.domain.Movie;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public interface MovieService extends BaseService<Movie,Long>{

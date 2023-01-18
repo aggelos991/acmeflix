@@ -1,6 +1,5 @@
 package com.acmeflix.service;
 
-import com.acmeflix.domain.ContentItem;
 import com.acmeflix.domain.Episode;
 import com.acmeflix.repository.EpisodeRepository;
 import lombok.RequiredArgsConstructor;

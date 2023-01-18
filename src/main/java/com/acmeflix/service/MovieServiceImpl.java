@@ -1,14 +1,15 @@
 package com.acmeflix.service;
 
-import com.acmeflix.domain.Category;
 import com.acmeflix.domain.Movie;
-import com.acmeflix.domain.Person;
 import com.acmeflix.repository.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor

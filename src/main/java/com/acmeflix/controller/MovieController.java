@@ -1,8 +1,6 @@
 package com.acmeflix.controller;
 
-import com.acmeflix.domain.Category;
 import com.acmeflix.domain.Movie;
-import com.acmeflix.domain.Person;
 import com.acmeflix.service.MovieService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 @RestController
