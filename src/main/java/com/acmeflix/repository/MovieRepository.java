@@ -22,7 +22,9 @@ public interface MovieRepository extends JpaRepository<Movie,Long> {
             "limit 10",nativeQuery = true)
     List<Object[]> findTop10Rating();
 
-    @Query(value = "select TITLE,NUMBER_OF_VIEWS from MOVIES\n" +
+    @Query(value = "select ID,TITLE,NUMBER_OF_VIEWS from MOVIES\n"  +
+            "union all\n" +
+            "select ID,TITLE,NUMBER_OF_VIEWS from TV_SHOWS\n" +
             "order by NUMBER_OF_VIEWS desc\n" +
             "limit 10",nativeQuery = true)
     List<Object[]> findTop10NumberOfViews();
