@@ -53,6 +53,4 @@ public class AccountController {
     public ResponseEntity<List<Object[]>> findWatchedTvShows(@PathVariable Long id){
         return ResponseEntity.ok(accountService.searchTvShowsWatchedPerProfileByAccountId(id));
     }
-
-
 }

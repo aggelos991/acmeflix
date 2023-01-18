@@ -46,13 +46,13 @@ public class TvShowServiceImpl extends BaseServiceImpl<TvShow> implements TvShow
 
 
     @Override
-    public List<TvShow> searchTop10ByNumberOfViews(){
-        return tvShowRepository.findTop10ByOrderByNumberOfViewsDesc();
+    public List<Object[]>  searchTop10ByNumberOfViews(){
+        return tvShowRepository.findTop10NumberOfViews();
     }
 
     @Override
-    public List<TvShow> searchTop10ByRating(){
-        return tvShowRepository.findTop10ByOrderByRatingDesc();
+    public List<Object[]>  searchTop10ByRating(){
+        return tvShowRepository.findTop10Rating();
     }
 
     @Override

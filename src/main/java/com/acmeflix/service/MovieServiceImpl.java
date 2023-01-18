@@ -46,13 +46,13 @@ public class MovieServiceImpl extends BaseServiceImpl<Movie> implements MovieSer
 
 
     @Override
-    public List<Movie> searchTop10ByNumberOfViews(){
-        return movieRepository.findTop10ByOrderByNumberOfViewsDesc();
+    public List<Object[]> searchTop10ByNumberOfViews(){
+        return movieRepository.findTop10NumberOfViews();
     }
 
     @Override
-    public List<Movie> searchTop10ByRating(){
-        return movieRepository.findTop10ByOrderByRatingDesc();
+    public List<Object[]> searchTop10ByRating(){
+        return movieRepository.findTop10Rating();
     }
 
     @Override

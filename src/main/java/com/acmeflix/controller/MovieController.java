@@ -42,12 +42,12 @@ public class MovieController {
     }
 
     @GetMapping("/top10/views")
-    public List<Movie> findTop10ByViews() {
+    public List<Object[]> findTop10ByViews() {
         return movieService.searchTop10ByNumberOfViews();
     }
 
     @GetMapping("/top10/rating")
-    public List<Movie> findTop10ByRating() {
+    public List<Object[]> findTop10ByRating() {
         return movieService.searchTop10ByRating();
     }
 

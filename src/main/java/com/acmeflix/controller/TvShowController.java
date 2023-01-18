@@ -42,12 +42,12 @@ public class TvShowController {
     }
 
     @GetMapping("/top10/views")
-    public List<TvShow> findTop10ByViews(){
+    public List<Object[]>  findTop10ByViews(){
         return tvShowService.searchTop10ByNumberOfViews();
     }
 
     @GetMapping("/top10/rating")
-    public List<TvShow> findTop10ByRating(){
+    public List<Object[]>  findTop10ByRating(){
         return tvShowService.searchTop10ByRating();
     }
 

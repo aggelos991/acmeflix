@@ -17,10 +17,20 @@ public interface MovieRepository extends JpaRepository<Movie,Long> {
 
     Set<Movie> findAllByCategoryNameIgnoreCase(String categoryName);
 
-    List<Movie> findTop10ByOrderByRatingDesc();
+    @Query(value = "select TITLE,RATING from MOVIES\n" +
+            "order by RATING desc\n" +
+            "limit 10",nativeQuery = true)
+    List<Object[]> findTop10Rating();
 
-    List<Movie> findTop10ByOrderByNumberOfViewsDesc();
+    @Query(value = "select TITLE,NUMBER_OF_VIEWS from MOVIES\n" +
+            "order by NUMBER_OF_VIEWS desc\n" +
+            "limit 10",nativeQuery = true)
+    List<Object[]> findTop10NumberOfViews();
 
-    @Query(value = "select C.NAME,COUNT(C.ID) from MOVIES inner join CATEGORIES C on C.ID = MOVIES.CATEGORY_ID group by C.NAME order by count(CATEGORY_ID) desc limit 5", nativeQuery = true)
+    @Query(value = "select C.NAME,COUNT(C.ID) from MOVIES " +
+            "inner join CATEGORIES C on C.ID = MOVIES.CATEGORY_ID " +
+            "group by C.NAME " +
+            "order by count(CATEGORY_ID) desc " +
+            "limit 5", nativeQuery = true)
     List<Object[]> findTop5PopularCategories();
 }

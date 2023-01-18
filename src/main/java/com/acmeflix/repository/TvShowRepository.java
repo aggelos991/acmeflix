@@ -17,9 +17,16 @@ public interface TvShowRepository extends JpaRepository<TvShow,Long> {
 
     Set<TvShow> findAllByCategoryNameIgnoreCase(String categoryName);
 
-    List<TvShow> findTop10ByOrderByRatingDesc();
+    @Query(value = "select TITLE,RATING from TV_SHOWS\n" +
+            "order by RATING desc\n" +
+            "limit 10",nativeQuery = true)
+    List<Object[]> findTop10Rating();
 
-    List<TvShow> findTop10ByOrderByNumberOfViewsDesc();
+    @Query(value = "select TITLE,NUMBER_OF_VIEWS from TV_SHOWS\n" +
+            "order by NUMBER_OF_VIEWS desc\n" +
+            "limit 10",nativeQuery = true)
+    List<Object[]> findTop10NumberOfViews();
+
 
     @Query(value = "select C.NAME,COUNT(C.ID) from TV_SHOWS inner join CATEGORIES C on C.ID = TV_SHOWS.CATEGORY_ID group by C.NAME order by count(CATEGORY_ID) desc limit 5", nativeQuery = true)
     List<Object[]> findTop5PopularCategories();

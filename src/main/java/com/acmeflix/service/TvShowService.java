@@ -15,9 +15,9 @@ public interface TvShowService extends BaseService<TvShow,Long>{
 
     Set<TvShow> searchByPersonsName(String firstName, String lastName);
 
-    List<TvShow> searchTop10ByNumberOfViews();
+    List<Object[]>  searchTop10ByNumberOfViews();
 
-    List<TvShow> searchTop10ByRating();
+    List<Object[]>  searchTop10ByRating();
 
     List<Object[]> searchTop5PopularCategories();
 

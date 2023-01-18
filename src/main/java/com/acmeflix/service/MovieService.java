@@ -15,9 +15,9 @@ public interface MovieService extends BaseService<Movie,Long>{
 
     Set<Movie> searchByPersonsName(String firstName, String lastName);
 
-    List<Movie> searchTop10ByNumberOfViews();
+    List<Object[]> searchTop10ByNumberOfViews();
 
-    List<Movie> searchTop10ByRating();
+    List<Object[]> searchTop10ByRating();
 
     List<Object[]> searchTop5PopularCategories();
 }

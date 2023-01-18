@@ -2,10 +2,12 @@ package com.acmeflix.domain;
 
 import com.acmeflix.domain.enumeration.Language;
 import com.acmeflix.domain.enumeration.ProfileType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.util.HashSet;
