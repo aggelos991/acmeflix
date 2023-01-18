@@ -8,7 +8,10 @@ import java.util.List;
 
 public interface AccountRepository extends JpaRepository<Account,Long> {
 
-    @Query(value = "select p2.name, p2.TOTAL_WATCH_TIME from accounts p1 inner join profiles P2 on p1.ID = P2.ACCOUNT_ID where p1.ID = :#{#id}", nativeQuery = true)
+    @Query(value = "select p2.name, p2.TOTAL_WATCH_TIME from accounts p1 " +
+            "inner join profiles P2 on p1.ID = P2.ACCOUNT_ID " +
+            "where p1.ID = :#{#id}"
+            , nativeQuery = true)
     List<Object[]> findViewingHoursPerProfileByAccountID(Long id);
 
     @Query(value = "select p2.name, M.TITLE from accounts p1 " +
