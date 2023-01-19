@@ -41,16 +41,6 @@ public class MovieController {
         return movieService.searchByCategory(name);
     }
 
-    @GetMapping("/top10/views")
-    public List<Object[]> findTop10ByViews() {
-        return movieService.searchTop10ByNumberOfViews();
-    }
-
-    @GetMapping("/top10/rating")
-    public List<Object[]> findTop10ByRating() {
-        return movieService.searchTop10ByRating();
-    }
-
     @PostMapping
     public ResponseEntity<Movie> create(@Valid @RequestBody Movie movie) {
         return new ResponseEntity<>(movieService.create(movie), HttpStatus.CREATED);

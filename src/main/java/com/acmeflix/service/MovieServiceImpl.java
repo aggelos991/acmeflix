@@ -44,17 +44,6 @@ public class MovieServiceImpl extends BaseServiceImpl<Movie> implements MovieSer
         return movieRepository.findAllByCategoryNameIgnoreCase(categoryName);
     }
 
-
-    @Override
-    public List<Object[]> searchTop10ByNumberOfViews(){
-        return movieRepository.findTop10NumberOfViews();
-    }
-
-    @Override
-    public List<Object[]> searchTop10ByRating(){
-        return movieRepository.findTop10Rating();
-    }
-
     @Override
     public List<Object[]>  searchTop5PopularCategories(){
         return movieRepository.findTop5PopularCategories();

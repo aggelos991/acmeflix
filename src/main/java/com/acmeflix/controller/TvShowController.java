@@ -41,16 +41,6 @@ public class TvShowController {
         return tvShowService.searchByCategory(name);
     }
 
-    @GetMapping("/top10/views")
-    public List<Object[]>  findTop10ByViews(){
-        return tvShowService.searchTop10ByNumberOfViews();
-    }
-
-    @GetMapping("/top10/rating")
-    public List<Object[]>  findTop10ByRating(){
-        return tvShowService.searchTop10ByRating();
-    }
-
     @PostMapping
     public ResponseEntity<TvShow> create(@Valid @RequestBody TvShow tvShow){
         return new ResponseEntity<>(tvShowService.create(tvShow), HttpStatus.CREATED);
